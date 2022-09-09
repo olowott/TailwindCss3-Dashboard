@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Dashboard</title>
+  </head>
+  <body class="min-h-screen md:flex" x-data="{open: false}">
+    <!-- sidebar  start-->
+    <aside
+      class="w-64 bg-white min-h-screen shadow-2xl absolute transform duration-400 ease-in inset-0 md:transform-none md:opacity-100 md:relative z-10"
+      :class="{'translate-x-0 opacity-100': open === true, '-translate-x-full opacity-0': open === false}"
+    >
+      <!-- logo  start -->
+      <div
+        class="flex justify-between items-center h-16 p-4 border-b border-slate-200"
+      >
+        <a
+          href="#"
+          class="text-2xl text-slate-700 flex items-center gap-4 md:gap-1"
+        >
+          <svg
+            class="w-6 h-6"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+            />
+          </svg>
+          <span>Tailwind</span>
+        </a>
+        <button
+          class="close-menu-sidebar focus:outline-none p-1 hover:bg-gray-200 rounded md:hidden"
+          @click="open=false"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+      <!-- logo  end -->
+
+      <!-- navigation  start -->
+      <nav class="flex flex-col gap-4 p-4 mt-8">
+        <a
+          href="#"
+          class="block rounded-md px-4 py-2 text-md text-slate-600 hover:bg-slate-200"
+          >Dashboard</a
+        ><a
+          href=""
+          class="block rounded-md px-4 py-2 text-md text-slate-600 hover:bg-slate-200"
+          >Users</a
+        ><a
+          href=""
+          class="block rounded-md px-4 py-2 text-md text-slate-600 hover:bg-slate-200"
+          >Groups</a
+        ><a
+          href=""
+          class="block rounded-md px-4 py-2 text-md text-slate-600 hover:bg-slate-200"
+          >Settings</a
+        >
+      </nav>
+      <!-- navigation  end -->
+    </aside>
+
+    <!-- sidebar  end-->
+
+    <!-- content area  start  -->
+    <main class="bg-slate-50 flex-1 relative z-0">
+      <!-- header  start-->
+
+      <header
+        class="h-16 py-1 px-8 flex items-center border-b border-slate-200 md:justify-between"
+      >
+        <!-- mobile header start  -->
+
+        <div
+          class="mobile-header flex items-center space-x-4 md:hidden"
+          @click="open=true"
+        >
+          <button
+            class="focus:outline-none focus:bg-gray-500 p-1 hover:bg-gray-200 rounded"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+          <a
+            href="#"
+            class="h-16 text-2xl text-slate-700 flex items-center gap-2"
+          >
+            <svg
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25"
+              />
+            </svg>
+            <span>Tailwind</span>
+          </a>
+        </div>
+        <!-- mobile header end -->
+
+        <div
+          class="rounded-full w-10 h-10 ml-auto bg-cover bg-center bg-slate-200 p-2"
+        >
+          DB
+        </div>
+      </header>
+      <!-- header  end-->
+      <!-- content body start -->
+      <div class="px-6" @click="open=false">
+        <h2 class="font-medium text-3xl text-slate-700">Dashboard</h2>
+      </div>
+      <!-- content body end -->
+      <!-- content area  end  -->
+    </main>
+  </body>
+</html>
